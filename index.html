@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tiku Notes | BSc Calculus Notes</title>
+
+    <!-- Our stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Our JavaScript file -->
+    <script src="javascript.js" defer></script>
+    <script type="module" src="pdf-viewer.js"></script>
+    <script src="https://kit.fontawesome.com/659c5b98ed.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- 1. Website Header -->
+    <header class="site-header" id="home">
+
+        <a href="index.html" class="logo">
+    <img src="images/tiku-logo.png"
+         alt="Tiku Notes"
+         class="website-logo">
+</a>
+
+        <nav class="navbar">
+          <a href="index.html" class="nav-link">
+    <i class="fa-solid fa-house home-icon"></i>
+    <span></span>
+</a>
+
+            <button
+                type="button"
+                class="about-button"
+                id="about-button"
+                aria-label="About Tiku Notes"
+                title="About Tiku Notes">
+                !
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- 2. Main Content -->
+    <main class="main-container">
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <h1>BSc Calculus Notes</h1>
+
+            <p>
+                Find your handwritten notes, organized by units
+                and exercises. View them online or download them
+                for studying.
+            </p>
+        </section>
+
+
+        <!-- 3. Notes Section -->
+        <section class="notes-section" id="notes">
+
+            <div class="notes-heading">
+                <h2>Calculus and Analytical Geometry</h2>
+                <p>Select a unit and exercise to access the notes.</p>
+            </div>
+
+
+            <div class="notes-layout" id="notes-layout">
+
+                <!-- Units and Exercises -->
+                <aside class="units-panel">
+
+                    <h3>Units & Exercises</h3>
+
+                    <div class="unit-list">
+
+                        <!-- Unit 1 -->
+                        <div class="unit-item">
+                            <button
+                                type="button"
+                                class="unit-button"
+                                data-unit="1"
+                                aria-expanded="false">
+                                <span>Unit #1</span>
+                                <span class="unit-arrow">+</span>
+                            </button>
+
+                            <div class="exercise-list" hidden>
+                                <!-- Add Unit 1 exercises here -->
+                            </div>
+                        </div>
+
+
+                        <!-- Unit 2 -->
+                        <div class="unit-item">
+                            <button
+                                type="button"
+                                class="unit-button"
+                                data-unit="2"
+                                aria-expanded="false">
+                                <span>Unit #2</span>
+                                <span class="unit-arrow">+</span>
+                            </button>
+
+                            <div class="exercise-list" hidden>
+                                <!-- Add Unit 2 exercises here -->
+                            </div>
+                        </div>
+
+
+                        <!-- Unit 3 -->
+                        <div class="unit-item">
+                            <button
+                                type="button"
+                                class="unit-button"
+                                data-unit="3"
+                                aria-expanded="false">
+                                <span>Unit #7: Plane Curves II</span>
+                                <span class="unit-arrow">+</span>
+                            </button>
+
+                            <div class="exercise-list" hidden>
+
+                                <button
+                                    type="button"
+                                    class="exercise-button"
+                                    data-exercise="7.1">
+                                    Exercise 7.1
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="exercise-button"
+                                    data-exercise="3.2">
+                                    Exercise 3.2
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="exercise-button"
+                                    data-exercise="3.3">
+                                    Exercise 3.3
+                                </button>
+
+                            </div>
+                        </div>
+
+
+                        <!-- Unit 4 -->
+                        <div class="unit-item">
+                            <button
+                                type="button"
+                                class="unit-button"
+                                data-unit="4"
+                                aria-expanded="false">
+                                <span>Unit #4</span>
+                                <span class="unit-arrow">+</span>
+                            </button>
+
+                            <div class="exercise-list" hidden>
+                                <!-- Add Unit 4 exercises here -->
+                            </div>
+                        </div>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- Landing Panel: shown before exercise selection -->
+                <section class="landing-picture" id="landing-picture">
+
+                    <div class="picture-content">
+                        <p class="picture-label">YOUR STUDY SPACE</p>
+
+                        <h2>Learn at your own pace.</h2>
+
+                        <p>
+                            Explore your Calculus exercises and find
+                            the notes you need, all in one place.
+                        </p>
+                    </div>
+
+                    <!-- We can add your chosen picture here later -->
+
+                </section>
+
+
+                <!-- PDF Viewer: shown after exercise selection -->
+                <section
+                    class="notes-viewer"
+                    id="notes-viewer"
+                    aria-label="Notes preview"
+                    hidden>
+
+                    <div id="notes-placeholder" class="notes-placeholder">
+                        <h3>Your notes will appear here</h3>
+
+                        <p>
+                            Select an exercise from the list
+                            to view its PDF notes.
+                        </p>
+                    </div>
+
+                    <div id="selected-notes" hidden>
+
+                        <h3 id="selected-exercise-title">
+                            Selected Exercise
+                        </h3>
+
+                       <div id="pdf-viewer" class="pdf-viewer" hidden>
+    <button
+        type="button"
+        id="fullscreen-button"
+        class="fullscreen-button"
+        aria-label="View notes in full screen"
+        title="Full screen">
+        <i class="fa-solid fa-expand"></i>
+    </button>
+
+    <div id="pdf-pages" class="pdf-pages"></div>
+</div>
+
+                        <p id="pdf-unavailable" hidden>
+                            Notes for this exercise have not been
+                            uploaded yet.
+                        </p>
+
+                        <a
+                            id="download-button"
+                            class="download-button"
+                            href="#"
+                            download
+                            hidden>
+                            Download PDF
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+
+        <!-- 4. About Section -->
+        <section class="about-section" id="about">
+
+            <h2>About Tiku Notes</h2>
+
+            <p>
+                Tiku Notes is a learning resource providing
+                handwritten BSc Calculus notes organized by
+                units and exercises.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- 5. Website Footer -->
+    <footer class="site-footer">
+        <p>Tiku Notes · Study at your own pace</p>
+    </footer>
+
+</body>
+
+</html>

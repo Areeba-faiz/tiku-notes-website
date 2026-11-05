@@ -1,0 +1,9 @@
+# Installed npm packages
+node_modules/
+
+# Local logs
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
